@@ -5,8 +5,13 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 def my_round(number, ndigits):
-    pass
+    int_part = number // 1
+    decimal_part = number % 1
+    unround_p = decimal_part * 10**ndigits
+    round_p = unround_p % 1
+    addit = round_p * 2 // 1
 
+    return int_part + ((unround_p + addit) // 1 / 10**ndigits)
 
 print(my_round(2.1234567, 5))
 print(my_round(2.1999967, 5))
@@ -20,9 +25,8 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
 
 
-print(lucky_ticket(123006))
-print(lucky_ticket(12321))
-print(lucky_ticket(436751))
+#print(lucky_ticket(123006))
+#print(lucky_ticket(12321))
+#print(lucky_ticket(436751))
