@@ -25,8 +25,22 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
+    sum_ = 0
+    num = str(ticket_number)
 
+    if len(num) != 6:
+        return 'Err'
 
-#print(lucky_ticket(123006))
-#print(lucky_ticket(12321))
-#print(lucky_ticket(436751))
+    l_part = num[:3]
+    r_part = num[3:]
+
+    for idx in range(3):
+        sum_ += int(l_part[idx])
+        sum_ -= int(r_part[idx])
+
+        if sum_ == 0:
+            return True
+
+print(lucky_ticket(123006))
+print(lucky_ticket(12321))
+print(lucky_ticket(436751))
